@@ -1,7 +1,12 @@
 package com.aluracurso.polimorfismoclases.models;
 
 public class Perro extends Animal{
-    void hacerSonido() {
-        System.out.println("El perro ladra");
+
+    public void hacerRuido() {
+        System.out.println("Au au au!");
+    }
+
+    public void buscarHueso() {
+        System.out.println("¡Buscando el hueso!");
     }
 }
