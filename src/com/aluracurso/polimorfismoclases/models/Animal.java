@@ -1,4 +1,4 @@
-package com.aluracuros.polimorfismo.models;
+package com.aluracurso.polimorfismoclases.models;
 
 public class Animal {
     void hacerSonido() {
