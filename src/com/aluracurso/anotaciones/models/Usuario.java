@@ -50,17 +50,19 @@ public class Usuario {
         return Period.between(usuario.getFechaNacimiento(), LocalDate.now()).getYears() >= 18;
     }
     /**uso de Generics permitirá recibir un objeto de cualquier tipo*/
-    public static <T> boolean validador( T objeto ) throws IllegalAccessException {
+    public static <T> boolean validador( T objeto ){
         //operar la clase referente al tipo del objeto recibido
         Class <?> clase = objeto.getClass();
         //iteraremos sobre los atributos de la clase utilizando el método getDeclaredFields():
         for (Field field : clase.getDeclaredFields()){
             /*averiguar qué campo está anotado con nuestra anotación. isAnnotationPresent(): este método comprueba si el campo
             * contiene la anotación pasada y devuelve un boolean*/
-            if (field.isAnnotationPresent(EdadMinima.class));
+            if (field.isAnnotationPresent(EdadMinima.class)) {
                 //recoger nuestra anotacion con getAnnotation()
                 EdadMinima edadMinima = field.getAnnotation(EdadMinima.class);
-                try{
+
+
+                try {
                     //Obtener edad pasada por el usuarios
                     field.setAccessible(true);
                     // se recibe la fecha de nacimiento
@@ -70,14 +72,18 @@ public class Usuario {
                      * el método getYears():para saber el valor del período en años **/
                     return Period.between(fechaNacimiento, LocalDate.now()).getYears() >= edadMinima.valor();
 
-                }catch (IllegalAccessException e){
+                } catch (IllegalAccessException e) {
                     e.printStackTrace();
+                    return false;
                 }
+            }
         }
         return false;
     }
 
 
 }
+
+
 
 
