@@ -3,7 +3,7 @@ public class CuentaAhorro extends Cuenta{
     private double tasaDeIntereses;
 
     public void calcularIntereses() {
-        double intereses= this.getSaldo() * tasaDeIntereses;
+        double intereses= this.saldo * tasaDeIntereses;
         System.out.println("Intereses actuales : " + intereses);
     }
 

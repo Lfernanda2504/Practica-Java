@@ -1,7 +1,7 @@
 public class Cuenta {
 
     private String titular;
-    private double saldo;
+    protected double saldo;
 
     public void retirar(double valor) {
         if (valor <= 0) {
