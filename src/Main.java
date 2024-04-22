@@ -19,10 +19,10 @@ public class Main {
                 a escapar. Matrix te posee. Sigue al conejo blanco.
                 Fué lanzada en:
                 """ +fechaDeLanzamiento;
-        System.out.println(sinopsis);
-        //casting de manera explita
-        int clasificacion = (int) (media / 2);
-        System.out.println(clasificacion);
+                System.out.println(sinopsis);
+                //casting de manera explita
+                int clasificacion = (int) (media / 2);
+                System.out.println(clasificacion);
 
 
 

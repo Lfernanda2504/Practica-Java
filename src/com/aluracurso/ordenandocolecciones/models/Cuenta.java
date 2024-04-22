@@ -1,6 +1,23 @@
-public class Cuenta {
+package com.aluracurso.ordenandocolecciones.models;
 
+public class Cuenta implements Comparable<Cuenta>{
+    private int numero;
     private String titular;
+
+
+    public Cuenta(int numero, String titular) {
+        this.numero = numero;
+        this.titular = titular;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
     protected double saldo;
 
     public void retirar(double valor) {
@@ -39,5 +56,16 @@ public class Cuenta {
 
     public void setSaldo(double saldo) {
         this.saldo = saldo;
+    }
+
+    @Override
+    public int compareTo(Cuenta otraCuenta) {
+        if (this.numero < otraCuenta.numero) {
+            return -1;
+        }
+        if (this.numero > otraCuenta.numero) {
+            return 1;
+        }
+        return 0;
     }
 }
